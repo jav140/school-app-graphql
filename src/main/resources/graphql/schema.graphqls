@@ -1,0 +1,62 @@
+
+type Student{
+    id:ID!
+    name:String
+    age:Int
+    subjects:[Subject]
+}
+
+type Subject{
+    id:ID!
+    name:String
+    hourPerWeek:Int
+    credit:Int
+}
+
+type Mutation{
+
+    createStudent(dto:CreateStudentDTO):Student
+    updateStudent(dto:UpdateStudentDTO):Student
+    createSubject(dto:CreateSubjectDTO):Subject
+    updateSubject(dto:UpdateSubjectDTO):Subject
+
+}
+
+
+type Query{
+    allStudents:[Student]
+    getOne(id:ID!):Student
+    allSubjects:[Subject]
+    findOne(id:ID!):Subject
+
+}
+
+
+
+input CreateStudentDTO{
+    id:ID!
+    name:String
+    age:Int
+}
+
+input UpdateStudentDTO{
+    id:ID!
+    name:String
+    age:Int
+}
+
+input CreateSubjectDTO{
+    id:ID!
+    name:String
+    hourPerWork:Int
+    credit:Int
+}
+
+input UpdateSubjectDTO{
+    id:ID!
+    name:String
+    hourPerWork:Int
+    credit:Int
+}
+
+
